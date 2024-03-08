@@ -1,9 +1,10 @@
 from openai import OpenAI
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Initialize the OpenAI client with your API key
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='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')
 
 def chat(request):
     return render(request, 'chatbot/index.html')
@@ -11,8 +12,8 @@ def chat(request):
 from openai import OpenAI
 
 # Initialize OpenAI client
-client = OpenAI(api_key='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')
-
+client = OpenAI(api_key='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')
+@csrf_exempt
 def generate_response(prompt):
     try:
         # Use the OpenAI API to generate a response
@@ -29,7 +30,7 @@ def generate_response(prompt):
         return None
 
 
-
+@csrf_exempt
 def get_response(request):
     if request.method == 'POST':
         user_input = request.POST.get('user_input', '')
