@@ -26067,6 +26067,16 @@
   font-size: 14px;
 }
 
+.navbar-no-shadow {
+  z-index: 99;
+  background-color: #fff;
+  position: fixed;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+}
+
 .sysf-switch-3 {
   width: 36px;
   height: 20px;
@@ -26173,7 +26183,8 @@
 
 .container-5 {
   z-index: 999;
-  position: absolute;
+  background-color: #fff;
+  position: fixed;
   top: auto;
   bottom: 0%;
   left: 0%;
@@ -26259,7 +26270,7 @@
 }
 
 .text-block-61-copy {
-  color: #3d3d3d;
+  color: #2f54eb;
   font-weight: 700;
 }
 
@@ -26333,8 +26344,30 @@
 }
 
 .div-block-147 {
+  margin: 140px auto 100px;
   padding-left: 40px;
   padding-right: 40px;
+  position: static;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: visible;
+}
+
+.div-block-148 {
+  position: relative;
+}
+
+.container-7 {
+  margin-top: 140px;
+  padding-bottom: 60px;
+  position: relative;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: visible;
 }
 
 @media screen and (min-width: 1440px) {

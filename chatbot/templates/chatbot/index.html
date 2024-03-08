@@ -25,8 +25,8 @@
         <link href="{% static 'chatbot/images/favicon.png' %}" rel="shortcut icon" type="image/x-icon"/>
         <link href="{% static 'chatbot/images/webclip.png' %}" rel="apple-touch-icon"/>
     </head>
-    <body class="body" data-w-id="643a39615283b645253e772f" style="background-color:rgb(255,255,255);color:rgb(0,0,0)">
-        <div class="navbar-no-shadow">
+    <body class="body" id="bodymain" data-w-id="643a39615283b645253e772f" style="background-color:rgb(255,255,255);color:rgb(0,0,0)">
+        <div class="navbar-no-shadow" data-w-id="b0c0bbf6-64cc-4f65-1b58-a3faa882fb64" style="background-color:rgb(255,255,255)">
             <div class="navbar-no-shadow-container w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner">
                 <div class="container-regular">
                     <div class="navbar-wrapper">
@@ -75,21 +75,24 @@
         </div>
 
         <!--CHATBOT AnD USER CONVERSION line-->
-        <div class="w-layout-blockcontainer container-6 w-container" id="conversation">
-            <div class="ai_response">
-                <div class="div-block-146">
-                    <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
-                    <div>
-                        <div class="text-block-61">
-                            GEN AI CHATBOT:
+        <div class="w-layout-blockcontainer w-container" >
+            <div class="div-block-147" id="conversation" style="padding-bottom: 4em;">
+                <div class="ai_response" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e1f" style="opacity:0">
+                    <div class="div-block-146">
+                        <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
+                        <div>
+                            <div class="text-block-61">
+                                GEN AI CHATBOT:
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="text-block-62-copy">
-                    Hello there! i am the new gen ai, How can I assist you today?
+                    <div class="text-block-62-copy">
+                        Hello ! How can I assist you today?
+                    </div>
                 </div>
             </div>
         </div>
+
 
 
 <!--===================+MAIN INPUT PROMPT=====================+-->
@@ -122,6 +125,7 @@
                 sendMessage();
             }
         });
+
     
         function sendMessage() {
             var message = document.getElementById('message').value;
@@ -187,7 +191,7 @@
                     </div>
                 </div>`;
             conversation.appendChild(aiResponseElement);
-            conversation.scrollTop = conversation.scrollHeight;
+            conversation.scroll = conversation.scrollHeight;
         }
     
             function getCookie(name) {
