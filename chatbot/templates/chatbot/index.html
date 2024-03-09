@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>
-            Generative AI CHATbOT!
+            Generative AI Chatbot
         </title>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="Webflow" name="generator"/>
@@ -25,8 +25,8 @@
         <link href="{% static 'chatbot/images/favicon.png' %}" rel="shortcut icon" type="image/x-icon"/>
         <link href="{% static 'chatbot/images/webclip.png' %}" rel="apple-touch-icon"/>
     </head>
-    <body class="body" id="bodymain" data-w-id="643a39615283b645253e772f" style="background-color:rgb(255,255,255);color:rgb(0,0,0)">
-        <div class="navbar-no-shadow" data-w-id="b0c0bbf6-64cc-4f65-1b58-a3faa882fb64" style="background-color:rgb(255,255,255)">
+    <body class="body" data-w-id="643a39615283b645253e772f" style="background-color:rgb(255,255,255);color:rgb(0,0,0)">
+        <div class="navbar-no-shadow">
             <div class="navbar-no-shadow-container w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner">
                 <div class="container-regular">
                     <div class="navbar-wrapper">
@@ -74,45 +74,51 @@
             </div>
         </div>
 
-        <!--CHATBOT AnD USER CONVERSION line-->
-        <div class="w-layout-blockcontainer w-container" >
-            <div class="div-block-147" id="conversation" style="padding-bottom: 4em;">
-                <div class="ai_response" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e1f" style="opacity:0">
-                    <div class="div-block-146">
-                        <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
-                        <div>
-                            <div class="text-block-61">
-                                GEN AI CHATBOT:
+        <div class="div-block-149" id="conversation" style="margin-bottom: 6em;">
+            <div class="ai_response" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e1f" style="opacity:0">
+                <div class="div-block-146">
+                    <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
+                    <div>
+                        <div class="text-block-61">
+                            GEN AI CHATBOT:
+                        </div>
+                    </div>
+                </div>
+                <div class="text-block-62-copy">
+                    Hello ! How can I assist you today?
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="div-block-148">
+            <div class="w-layout-blockcontainer container-5 w-container">
+                <div>
+                    <div class="w-form">
+                        <div class="sysf-input-with-label-2">
+                            <input autofocus="true" class="sysf-input-4 sysf-medium w-input" data-name="Input" id="message" maxlength="256" name="input" placeholder="Type your message" required="" style="background-color:rgb(255,255,255);color:rgb(0,0,0)" type="text"/>
+                            
+                            <div class="div-block-144" style="filter:invert(0%)">
+                                <button class="sysf-button-4 sysf-medium w-inline-block" id="sendMessage" onclick="sendMessage()">
+                                    <div class="sysf-button-text-3">
+                                        Send
+                                    </div>
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-block-62-copy">
-                        Hello ! How can I assist you today?
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-<!--===================+MAIN INPUT PROMPT=====================+-->
-        <div class="w-layout-blockcontainer container-5 w-container">
-            <div>
-                <div class="w-form">
-                    <div class="sysf-input-with-label-2">
-                        <input autofocus="true" class="sysf-input-4 sysf-medium w-input" data-name="Input" id="message" maxlength="256" name="input" placeholder="Type your message" required="" type="text"/>
                         
-                        <div class="div-block-144" style="filter:invert(0%)">
-                            <button class="sysf-button-4 sysf-medium w-inline-block" id="sendMessage" onclick="sendMessage()">
-                                <div class="sysf-button-text-3">
-                                    Send
-                                </div>
-                            </button>
+                        <div class="w-form-done">
+                        </div>
+                        <div class="w-form-fail">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
         <script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=643a39615283b66f233e772d" type="text/javascript">
         </script>
         <script src="{% static 'chatbot/js/webflow.js' %}" type="text/javascript">
@@ -155,19 +161,19 @@
             var userPromptElement = document.createElement('div');
             userPromptElement.className = 'user_prompt message'; // Add user_prompt class
             userPromptElement.innerHTML = `
-            <div class="user_prompt">
-                    <div class="div-block-146-copy">
-                        <img alt="" class="sysf-avatar-2-copy sysf-default-copy" height="44" loading="lazy" src="https://uploads-ssl.webflow.com/641b5e72069a0f21c5ff410f/65e94e14aaf023dae3e11748_Avatar%20Placeholder.svg" style="filter:invert(0%)" width="44"/>
-                        <div>
-                            <div class="text-block-61-copy" style="color:rgb(0,0,0)">
-                                YOU:
-                            </div>
+            <div class="user_prompt" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e27" >
+                <div class="div-block-146-copy">
+                    <img alt="" class="sysf-avatar-2-copy sysf-default-copy" height="44" loading="lazy" src="https://uploads-ssl.webflow.com/641b5e72069a0f21c5ff410f/65e94e14aaf023dae3e11748_Avatar%20Placeholder.svg" style="filter:invert(0%)" width="44"/>
+                    <div>
+                        <div class="text-block-61-copy">
+                            YOU:
                         </div>
                     </div>
-                    <div class="text-block-62">
-                        ${content}
-                    </div>
-                </div>`;
+                </div>
+                <div class="text-block-62">
+                    ${content}
+                </div>
+            </div>`;
             conversation.appendChild(userPromptElement);
             conversation.scrollTop = conversation.scrollHeight;
         }
@@ -177,19 +183,19 @@
             var aiResponseElement = document.createElement('div');
             aiResponseElement.className = 'ai_response message'; // Add ai_response class
             aiResponseElement.innerHTML = `
-            <div class="ai_response">
-                    <div class="div-block-146">
-                        <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
-                        <div>
-                            <div class="text-block-61">
-                                GEN AI CHATBOT:
-                            </div>
+            <div class="ai_response" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e1f" >
+                <div class="div-block-146">
+                    <img alt="" class="sysf-avatar-2 sysf-default" data-w-id="f82e5eb0-7a28-a5ae-949e-1276bfe09e21" height="44" loading="lazy" src="{% static 'chatbot/images/8a06a05f2273dc136c10d5136cddc8b7-ezgif.com-resize.gif' %}" width="44"/>
+                    <div>
+                        <div class="text-block-61">
+                            GEN AI CHATBOT:
                         </div>
                     </div>
-                    <div class="text-block-62-copy">
-                        ${response}
-                    </div>
-                </div>`;
+                </div>
+                <div class="text-block-62-copy">
+                    ${response}
+                </div>
+            </div>`;
             conversation.appendChild(aiResponseElement);
             conversation.scroll = conversation.scrollHeight;
         }
@@ -209,5 +215,6 @@
                 return cookieValue;
             }
         </script>
+
     </body>
 </html>
